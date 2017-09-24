@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
 
-	get 'pages/index' 
+	root 'interfaces#index'
+	resources :interfaces
+
+		
+	end
 end
