@@ -2,6 +2,7 @@ class InterfacesController < ApplicationController
 
 	def index
 		@interfaces = Interface.all
+		render 'index'
 	end
 
 	def show
@@ -11,14 +12,25 @@ class InterfacesController < ApplicationController
 
 	def create
 		@interface = Interface.new(interface_params)
-		@interface.save
-		render 'index'
+		if @interface.save
+			redirect_to root_path
+		else
+			flash[:error] = "Nopee"
+			render '/new'
+		end
+	end
+
+	def destroy
+		p "INTERFACCCE"
+		@interface = Interface.find(params[:id])
+		@interface.destroy
+		redirect_to root_path
 	end
 
 
   private
     def interface_params
-      params.require(:interface).permit("ip", :hostname, :port, :ddns)
+      params.require(:interface).permit(:ip, :hostname, :port, :ddns, :notes)
     end
 
 

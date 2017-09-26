@@ -16,24 +16,16 @@
 		<% end %>
     </tr>
   </thead>
-  <tbody>
+  <% @interfaces.each do |int| %>
+   <tbody>
     <tr class="trow">
-      <th scope="row">192.168.1.1</th>
-      <td>Merlin</td>
-      <td>8080</td>
-      <td>merlin.onthewifi.com</td>
+      <th scope="row"><%= int.ip %></th>
+      <td><%= int.hostname %></td>
+      <td><%= int.port %></td>
+      <td><%= int.ddns %></td>
+      <td><%= link_to "Delete", interface_path(int), method: :delete %></td>
     </tr>
-    <tr class="trow">
-      <th scope="row">192.168.1.100</th>
-      <td>freenas</td>
-      <td>80</td>
-      <td>free.onthewifi.com</td>
-    </tr>
-    <tr class="trow">
-      <th scope="row">192.168.1.10</th>
-      <td>Shoppc</td>
-      <td></td>
-      <td>shoppc.local</td>
-    </tr>
+    <% end %>
+   
   </tbody>
 </table>

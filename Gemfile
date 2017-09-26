@@ -46,6 +46,8 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.6"
+  gem 'meta_request'
+
 end
 
 group :test do
