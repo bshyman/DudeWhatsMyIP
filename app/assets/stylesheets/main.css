@@ -19,7 +19,8 @@ tbody > tr.trow:hover * {
 	background-color: #01A2A6;
 }
 
-.add_int {
+.add_int, .minus_img {
 	height: 20px;
 	width: 20px;
 }
+
