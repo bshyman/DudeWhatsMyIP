@@ -10,8 +10,16 @@ class InterfacesController < ApplicationController
 	end
 
 	def create
-		@interface = params
+		@interface = Interface.new(interface_params)
+		@interface.save
+		render 'index'
 	end
+
+
+  private
+    def interface_params
+      params.require(:interface).permit("ip", :hostname, :port, :ddns)
+    end
 
 
 end

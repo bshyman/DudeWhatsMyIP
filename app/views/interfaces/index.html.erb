@@ -7,12 +7,12 @@
       <th>DDNS</th>
     </tr>
     <tr class="trow">
-    	<%= simple_form_for :interface do |f| %>
+    	<%= simple_form_for :interface, :url => { :action => "create" } do |f| %>
 		<th><%= f.input_field :ip %></th>
 		<th><%= f.input_field :hostname %></th>
 		<th><%= f.input_field :port %></th>
 		<th><%= f.input_field :ddns %></th>
-		<th><%= image_tag ("plus.png"), class:"add_int" %></th>    	
+		<th><%= image_submit_tag ("plus.png"), class:"add_int" %></th>    	
 		<% end %>
     </tr>
   </thead>
