@@ -5,8 +5,14 @@ body {
 
 }
 
+table {
+	opacity: 0.85;
+
+}
+
 td, th {
 	background-color: #29d9c2;
+	text-align: center !important;
 }
 
 

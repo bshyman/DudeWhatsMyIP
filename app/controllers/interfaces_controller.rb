@@ -1,7 +1,9 @@
 class InterfacesController < ApplicationController
 
+
 	def index
 		@interfaces = Interface.all
+		# respond_to :html, :json
 		render 'index'
 	end
 
@@ -21,7 +23,6 @@ class InterfacesController < ApplicationController
 	end
 
 	def destroy
-		p "INTERFACCCE"
 		@interface = Interface.find(params[:id])
 		@interface.destroy
 		redirect_to root_path

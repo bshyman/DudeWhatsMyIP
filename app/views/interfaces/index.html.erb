@@ -19,7 +19,7 @@
   </thead>
   <% @interfaces.each do |int| %>
    <tbody>
-    <tr class="trow animated bounceIn">
+    <tr class="trow animated bounceIn" id="<%= int.id %>">
       <th scope="row"><%= int.ip %></th>
       <td><%= int.hostname %></td>
       <td><%= int.port %></td>
