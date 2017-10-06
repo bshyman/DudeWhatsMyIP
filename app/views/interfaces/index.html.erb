@@ -19,12 +19,12 @@
   </thead>
   <% @interfaces.each do |int| %>
    <tbody>
-    <tr class="trow animated bounceIn" id="<%= int.id %>">
+    <tr class="trow animated fadeIn" id="<%= int.id %>">
       <th scope="row"><%= int.ip %></th>
       <td><%= int.hostname %></td>
       <td><%= int.port %></td>
       <td><%= int.ddns %></td>
-      <td><%= link_to image_tag("minus.png"), interface_path(int), method: :delete%></td>
+      <td class='delete_row'><%= link_to image_tag("minus.png"), interface_path(int), method: :delete%></td>
     </tr>
     <% end %>
    
