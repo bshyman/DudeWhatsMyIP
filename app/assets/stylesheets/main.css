@@ -1,16 +1,13 @@
 body {
 	/*background-image: url('greyarch.png');*/
-	background: linear-gradient(top, #768f8f, #00a5af);
+	background: linear-gradient(top, #e8d3d3, #00a5af);
 	height: 100%;
 	padding: 80px 40px 40px 40px;
 	font-family: 'Geo', sans-serif !important;
-
-
 }
 
 html {
 	background-color: #00a5af;
-
 }
 
 * {
@@ -24,10 +21,7 @@ html {
 }
 
 .table {
-	opacity: 0.75;
-	/*border-width: 5px;  */
-	border: 10px solid;
-	border-radius: 10px !important;
+	opacity: 0.65;
 
 }
 
@@ -56,8 +50,10 @@ tbody > tr.trow:hover * {
 
 * > * {
 	border: none !important;
-	border-radius: 8px 0px 8px 0px !important;
-
+	border-radius: 8px 8px 8px 8px !important;
+}
+.delete_row {
+	-webkit-animation-duration: 8s;
 }
 
 
