@@ -1,18 +1,42 @@
 body {
-	background-image: url('images/marblebackground.png');
-	height: 1500px;
+	/*background-image: url('greyarch.png');*/
+	background: linear-gradient(top, #e8d3d3, #00a5af);
+	height: 100%;
 	padding: 80px 40px 40px 40px;
+	font-family: 'Geo', sans-serif !important;
+}
+
+html {
+	background-color: #0 0a5af;
+}
+
+* {
+	font-family: 'Geo', Verdana !important;
+	text-align: center;
+	font-size: 22px;
+	text-shadow: 6px 6px 12px #00a5af;
+	color: black;
+	line-height: 1.5em;
 
 }
 
+.table {
+	opacity: 0.65;
+
+}
+
+
 td, th {
-	background-color: #29d9c2;
+	background-color: #a1b0b0;
+	text-align: center !important;
+	border-left: none !important;
+
 }
 
 
 
 tr {
-	border: 3px solid;
+	/*border-bottom: 3px solid !important;*/
 }
 
 tbody > tr.trow:hover * {
@@ -23,4 +47,14 @@ tbody > tr.trow:hover * {
 	height: 20px;
 	width: 20px;
 }
+
+* > * {
+	border: none !important;
+	border-radius: 8px 8px 8px 8px !important;
+}
+.delete_row {
+	-webkit-animation-duration: 8s;
+}
+
+
 
