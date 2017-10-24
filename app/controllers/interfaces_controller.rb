@@ -13,7 +13,13 @@ class InterfacesController < ApplicationController
 	def create
 		@interface = Interface.new(interface_params)
 		if @interface.save
-			redirect_to root_path
+			if request.xhr?
+				json: @interface
+				erb: '/index'	
+			else
+				redirect_to root_path
+				flash[:error] = "NO AJAX!"
+			end
 		else
 			flash[:error] = "Nopee"
 			render '/new'
@@ -21,10 +27,15 @@ class InterfacesController < ApplicationController
 	end
 
 	def destroy
-		p "INTERFACCCE"
 		@interface = Interface.find(params[:id])
 		@interface.destroy
-		redirect_to root_path
+		if request.xhr?
+			"AJax"
+		else
+			redirect_to root_path
+			render: @interface
+		end
+
 	end
 
 

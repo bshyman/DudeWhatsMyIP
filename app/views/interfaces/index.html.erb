@@ -24,7 +24,7 @@
       <td><%= int.hostname %></td>
       <td><%= int.port %></td>
       <td><%= int.ddns %></td>
-      <td><%= link_to image_tag("minus.png"), interface_path(int), method: :delete%></td>
+      <td><%= link_to image_tag("minus.png"), interface_path(int), method: :delete, class:"remove_int_btn"%></td>
     </tr>
     <% end %>
    
