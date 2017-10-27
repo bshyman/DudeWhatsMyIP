@@ -1,39 +1,38 @@
 class InterfacesController < ApplicationController
-
 	def index
 		@interfaces = Interface.all
-		render 'index'
 	end
 
 	def show
+		@interface = Interface.find(params[:id])
+		render @interface.as_json, layout: false
 	end
 	def new
 	end
 
 	def create
+		p params
 		@interface = Interface.new(interface_params)
 		if @interface.save
 			if request.xhr?
-				json: @interface
-				erb: '/index'	
+				p "AJJJJJAX"
+				@interface.as_json
 			else
-				redirect_to root_path
-				flash[:error] = "NO AJAX!"
+				p "UGHHH"
+				# redirect_to root_path 
 			end
 		else
-			flash[:error] = "Nopee"
-			render '/new'
+			p "DATABASE ENTRY ERRROR"
 		end
 	end
 
 	def destroy
 		@interface = Interface.find(params[:id])
-		@interface.destroy
 		if request.xhr?
-			"AJax"
+			@interface.to_json
+			# @interface.destroy
 		else
-			redirect_to root_path
-			render: @interface
+			p "IN ELLLLLLLSE"
 		end
 
 	end
@@ -41,7 +40,7 @@ class InterfacesController < ApplicationController
 
   private
     def interface_params
-      params.require(:interface).permit(:ip, :hostname, :port, :ddns, :notes)
+      params.require(:interface).permit(:id, :ip, :hostname, :port, :ddns, :notes)
     end
 
 
