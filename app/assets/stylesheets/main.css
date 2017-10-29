@@ -48,18 +48,9 @@ tbody > tr.trow:hover * {
 	width: 20px;
 }
 
-<<<<<<< HEAD
-* > * {
-	border: none !important;
-	border-radius: 8px 8px 8px 8px !important;
-}
-.delete_row {
-	-webkit-animation-duration: 8s;
-=======
 * {
 	text-align: center;
 	font-family: Verdana;
->>>>>>> 037ac543971c9b65f39b8d49339935566455f12e
 }
 
 

@@ -1,15 +1,7 @@
 class InterfacesController < ApplicationController
-<<<<<<< HEAD
-
 
 	def index
 		@interfaces = Interface.all
-		# respond_to :html, :json
-		render 'index'
-=======
-	def index
-		@interfaces = Interface.all
->>>>>>> 037ac543971c9b65f39b8d49339935566455f12e
 	end
 
 	def show

@@ -1,28 +1,4 @@
-<<<<<<< HEAD
 $(document).ready(function(){
-		// alert("Here")
-	var intElements = document.getElementsByTagName('tr');
-// 	console.log(intElements)
-// 	intElements.each(function(key, element){
-// 		console.log('key ' + key)
-// 	})
-// 	intElements.class;
-// 	var url = "/interfaces/"
-// 	$.ajax({
-// 	  url: "/interfaces",
-// 	  context: document.body
-// 	}).done(function() {
-// 		console.log("This - " + this)
-// 	  $( this ).addClass( "animated zoomOutDown" );
-// });
-
-	$('body').on('click', '.delete_row', function(e){
-		e.preventDefault();
-		$(this).parent().addClass('animated zoomOutDown');
-	
-	})
-=======
- $(document).ready(function(){
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(e){
 		var interfaceId = $(this).parent().parent().attr('id');
@@ -54,7 +30,4 @@ $(document).ready(function(){
 			alert(response)
 		)
 	})
-
-
->>>>>>> 037ac543971c9b65f39b8d49339935566455f12e
 });
