@@ -8,12 +8,12 @@
       <th></th>
     </tr>
     <tr class="trow">
-    	<%= simple_form_for :interface, url: { :action => "create" }, html: {class:'add_int_form'} do |f| %>
+    	<%= simple_form_for :interface, remote: true, html: {class:"add_int_form"} do |f| %>
 		<th><%= f.input_field :ip %></th>
 		<th><%= f.input_field :hostname %></th>
 		<th><%= f.input_field :port %></th>
 		<th><%= f.input_field :ddns %></th>
-		<th><%= image_submit_tag ("plus.png"), class:"add_int" %></th>    	
+		<th><%= image_submit_tag ("plus.png"), class:"add_int"%></th>    	
 		<% end %>
     </tr>
   </thead>

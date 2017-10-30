@@ -1,33 +1,33 @@
 $(document).ready(function(){
 	// Remove row ajax call
-	$("table.table").on("click", "i#remove_int_btn", function(e){
+	$("table.table").on("click", "i#remove_int_btn", function(event){
+		event.preventDefault();
 		var interfaceId = $(this).parent().parent().attr('id');
 		var $data = $(this).serialize();
 		$.ajax({
-			url: "interface/" + interfaceId,
+			url: "interfaces/" + interfaceId,
 			data: $data,
-			method: "delete"
+			type: "DELETE"
 		}).done(function(response){
-			
-			// console.log(JSON.parse(response);
+			console.log("#"+interfaceId);
 			console.log(response);
+			$("tbody").remove("#"+interfaceId)
 		})
 	});
 	
 	// Add row ajax call
-	$("table.table").on("click", ".add_int", function(event){
+	$("form.add_int_form").on("submit", function(event){
+		console.log('wtf')
 		event.preventDefault();
 		var url = "/interfaces";
-		var form = $('form.add_int_form');
-		console.log(form)
-		var data = $(this)
+		var data = $(this).serialize();
+		console.log(data)
 		$.ajax({
 			url: url,
-			data: form,
-			method: 'POST'
-			action: 'create'
-		}).done(
-			alert(response)
-		)
+			data: data,
+			type: 'POST'
+		}).done(function(response) {
+			$(".table").closest("tbody").append(response)
+		})
 	})
 });
