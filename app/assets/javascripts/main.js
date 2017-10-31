@@ -2,6 +2,8 @@ $(document).ready(function(){
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(event){
 		event.preventDefault();
+		//store context in variable to use in .done
+		var interfaceDiv = $(this)
 		var interfaceId = $(this).parent().parent().attr('id');
 		var $data = $(this).serialize();
 		$.ajax({
@@ -9,15 +11,12 @@ $(document).ready(function(){
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
-			console.log("#"+interfaceId);
-			console.log(response);
-			$("tbody").remove("#"+interfaceId)
+			interfaceDiv.closest("tr").remove();
 		})
 	});
 	
 	// Add row ajax call
-	$("form.add_int_form").on("submit", function(event){
-		console.log('wtf')
+	$("table").on("submit", "form.add_int_form", function(event){
 		event.preventDefault();
 		var url = "/interfaces";
 		var data = $(this).serialize();
@@ -25,9 +24,11 @@ $(document).ready(function(){
 		$.ajax({
 			url: url,
 			data: data,
+			dataType: "json",
 			type: 'POST'
 		}).done(function(response) {
-			$(".table").closest("tbody").append(response)
+			console.log(response.hostname)
+			$(".list").append(response)
 		})
 	})
 });
