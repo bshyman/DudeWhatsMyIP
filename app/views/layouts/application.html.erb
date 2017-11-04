@@ -16,14 +16,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
   <link href="https://fonts.googleapis.com/css?family=Geo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Varela+Round" rel="stylesheet">
 
 
 
 </head>
 <body class="<%= body_class %>">
-  <%= render "flashes" -%>
+<header id="header">
+  <nav class="navbar navbar-inverse bg-inverse">
+    <ul><li>home</li></ul>
+
+  </nav>
   <h1>IP Address Management</h1>
+</header>
+
+  <div class="content">
+  <%= render "flashes" -%>
   <%= yield %>
+  </div>
   <!-- jQuery -->
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
