@@ -17,6 +17,13 @@
 	line-height: 1.5em;
 	/*border: 1px solid;*/
 }
+nav {
+}
+h1.navbar-text {
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 15px;
+}
 
 table.table {
 	opacity: 0.95;
