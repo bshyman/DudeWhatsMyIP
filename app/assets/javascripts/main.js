@@ -20,27 +20,22 @@ $(document).ready(function(){
 		event.preventDefault();
 		var url = "/interfaces";
 		var data = $(this).serialize();
-		console.log($(this))
 		$.ajax({
 			url: url,
 			data: data,
 			type: 'POST'
 		}).done(function(response) {
-			console.log(response)
-			var options = "";
-			// for(i in response) {
-				// console.log(response.id)
-		  	// options += "<option value = "+list[i].empID+">"+list[i].givenName+"</option>"; 
-		  options = "<tr class=\"trow data-row\" id="+response.id+">" +
-		  						"<th scope=\"row\">"+response.ip+"</th>" +
-						  	  "<td>"+response.hostname+"</td>" +
-						  	  "<td>"+response.port+"</td>" +
-						  	  "<td>"+response.ddns+"</td>" +
-						  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
-					  	  "</tr>";
-			$(".list ").append(options)
-			// }
-
+			console.log(response);
+		  var options = 
+		  	"<tr class=\"trow data-row\" id="+response.id+">" +
+					"<th scope=\"row\">"+response.ip+"</th>" +
+		  	  "<td>"+response.hostname+"</td>" +
+		  	  "<td>"+response.port+"</td>" +
+		  	  "<td>"+response.ddns+"</td>" +
+		  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
+	  	  "</tr>";
+			$(".list ").append(options);
 		})
-	})
+	});
+
 });
