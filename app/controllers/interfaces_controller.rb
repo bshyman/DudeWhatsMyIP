@@ -22,24 +22,10 @@ class InterfacesController < ApplicationController
 				render json: @interface
 			else
 				p "UGHHH"
-				# redirect_to root_path 
 			end
 		else
 			p "DATABASE ENTRY ERRROR"
 		end
-		# p params
-		# @interface = Interface.new(interface_params)
-		# if @interface.save
-		#   respond_to do |format|
-		#     format.html { redirect_to interfaces_path, notice: "Saved" }
-		#     format.json { render json: @interface, location: interface_path(@interface), status: :created }
-		#   end
-		# else
-		#   respond_to do |format|
-		#     format.html { render :edit }
-		#     format.json {render json: @interface, status: :unprocessable_entity }
-		#   end
-		# end
 	end
 
 	def destroy
@@ -47,11 +33,6 @@ class InterfacesController < ApplicationController
 		if request.xhr?
 			@interface.to_json
 			@interface.destroy
-			# respond_to do |format|
-	  #     format.html { redirect_to interfaces_url }
-	  #     format.json { head :no_content }
-	  #     format.js   { render :layout => false }
-	  #   end
 		else
 			p "IN ELLLLLLLSE"
 		end
@@ -62,6 +43,5 @@ class InterfacesController < ApplicationController
     def interface_params
       params.require(:interface).permit(:id, :ip, :hostname, :port, :ddns, :notes)
     end
-
 
 end
