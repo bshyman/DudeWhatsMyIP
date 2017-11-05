@@ -16,19 +16,31 @@ $(document).ready(function(){
 	});
 	
 	// Add row ajax call
-	$("table").on("submit", "form.add_int_form", function(event){
+	$("form.add_int_form").on("submit", function(event){
 		event.preventDefault();
 		var url = "/interfaces";
 		var data = $(this).serialize();
-		console.log(data)
+		console.log($(this))
 		$.ajax({
 			url: url,
 			data: data,
-			dataType: "json",
 			type: 'POST'
 		}).done(function(response) {
-			console.log(response.hostname)
-			$(".list").append(response)
+			console.log(response)
+			var options = "";
+			// for(i in response) {
+				// console.log(response.id)
+		  	// options += "<option value = "+list[i].empID+">"+list[i].givenName+"</option>"; 
+		  options = "<tr class=\"trow data-row\" id="+response.id+">" +
+		  						"<th scope=\"row\">"+response.ip+"</th>" +
+						  	  "<td>"+response.hostname+"</td>" +
+						  	  "<td>"+response.port+"</td>" +
+						  	  "<td>"+response.ddns+"</td>" +
+						  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
+					  	  "</tr>";
+			$(".list ").append(options)
+			// }
+
 		})
 	})
 });

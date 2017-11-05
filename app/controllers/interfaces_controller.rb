@@ -7,7 +7,7 @@ class InterfacesController < ApplicationController
 
 	def show
 		@interface = Interface.find(params[:id])
-		render @interface.as_json, layout: false
+		render json: @interface, layout: false
 	end
 
 	def new
