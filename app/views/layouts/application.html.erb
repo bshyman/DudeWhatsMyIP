@@ -11,12 +11,26 @@
   <%= csrf_meta_tags %>
   <!-- fontAwesome -->
   <script src="https://use.fontawesome.com/0e783adfae.js"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Geo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Varela+Round" rel="stylesheet">
+
 
 </head>
 <body class="<%= body_class %>">
+<header id="header">
+  <nav class="navbar-nav navbar-dark bg-dark">
+
+  <h1 class="navbar-text">IP Address Management</h1>
+  </nav>
+</header>
+
+  <div class="content">
   <%= render "flashes" -%>
-  <h1>IP Address Management</h1>
   <%= yield %>
+  </div>
   <!-- jQuery -->
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
