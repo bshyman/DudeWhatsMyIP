@@ -5,8 +5,6 @@
 	background-size: cover;
 	background-image: url('abstract_whites.jpg');
 	border: 1px solid;
-
-
 }
 
 
@@ -72,6 +70,7 @@ tbody > tr.trow:hover * {
 .delete_row {
 	-webkit-animation-duration: 8s;
 }
+
 
 
 
