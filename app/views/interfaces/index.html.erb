@@ -1,4 +1,5 @@
-<table class="table">
+  
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <th>IP Address</th>
@@ -8,25 +9,27 @@
       <th></th>
     </tr>
     <tr class="trow">
-    	<%= simple_form_for :interface, :url => { :action => "create" } do |f| %>
+    	<%= simple_form_for :interface, html: {class:"add_int_form"} do |f| %>
 		<th><%= f.input_field :ip %></th>
 		<th><%= f.input_field :hostname %></th>
 		<th><%= f.input_field :port %></th>
 		<th><%= f.input_field :ddns %></th>
-		<th><%= image_submit_tag ("plus.png"), class:"add_int" %></th>    	
+		<th><%= image_submit_tag ("plus.png"), class:"add_int"%></th>    	
 		<% end %>
     </tr>
   </thead>
-  <% @interfaces.each do |int| %>
-   <tbody>
-    <tr class="trow animated fadeIn" id="<%= int.id %>">
-      <th scope="row"><%= int.ip %></th>
-      <td><%= int.hostname %></td>
-      <td><%= int.port %></td>
-      <td><%= int.ddns %></td>
-      <td class='delete_row'><%= link_to image_tag("minus.png"), interface_path(int), method: :delete%></td>
-    </tr>
+
+  <tbody class="list">
+    <% @interfaces.each do |int| %>
+      <tr class="trow data-row" id="<%= int.id %>">
+        <th scope="row"><%= int.ip %></th>
+        <td><%= int.hostname %></td>
+        <td><%= int.port %></td>
+        <td><%= int.ddns %></td>
+        <td ><i id="remove_int_btn" class="fa fa-2x fa-trash" aria-hidden="true"></i></td>
+      </tr>
     <% end %>
-   
   </tbody>
+
 </table>
+
