@@ -50,6 +50,10 @@ tbody > tr.trow:hover * {
 	width: 20px;
 }
 
+* {
+	text-align: center;
+	font-family: Verdana;
+}
 
 
 .delete_row {

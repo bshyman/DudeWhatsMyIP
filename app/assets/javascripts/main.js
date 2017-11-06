@@ -1,23 +1,41 @@
 $(document).ready(function(){
-		// alert("Here")
-	var intElements = document.getElementsByTagName('tr');
-// 	console.log(intElements)
-// 	intElements.each(function(key, element){
-// 		console.log('key ' + key)
-// 	})
-// 	intElements.class;
-// 	var url = "/interfaces/"
-// 	$.ajax({
-// 	  url: "/interfaces",
-// 	  context: document.body
-// 	}).done(function() {
-// 		console.log("This - " + this)
-// 	  $( this ).addClass( "animated zoomOutDown" );
-// });
-
-	$('body').on('click', '.delete_row', function(e){
-		e.preventDefault();
-		$(this).parent().addClass('animated zoomOutDown');
+	// Remove row ajax call
+	$("table.table").on("click", "i#remove_int_btn", function(event){
+		event.preventDefault();
+		//store context in variable to use in .done
+		var interfaceDiv = $(this)
+		var interfaceId = $(this).parent().parent().attr('id');
+		var $data = $(this).serialize();
+		$.ajax({
+			url: "interfaces/" + interfaceId,
+			data: $data,
+			type: "DELETE"
+		}).done(function(response){
+			interfaceDiv.closest("tr").remove();
+		})
+	});
 	
-	})
+	// Add row ajax call
+	$("form.add_int_form").on("submit", function(event){
+		event.preventDefault();
+		var url = "/interfaces";
+		var data = $(this).serialize();
+		$.ajax({
+			url: url,
+			data: data,
+			type: 'POST'
+		}).done(function(response) {
+			console.log(response);
+		  var options = 
+		  	"<tr class=\"trow data-row\" id="+response.id+">" +
+					"<th scope=\"row\">"+response.ip+"</th>" +
+		  	  "<td>"+response.hostname+"</td>" +
+		  	  "<td>"+response.port+"</td>" +
+		  	  "<td>"+response.ddns+"</td>" +
+		  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
+	  	  "</tr>";
+			$(".list ").append(options);
+		})
+	});
+
 });
