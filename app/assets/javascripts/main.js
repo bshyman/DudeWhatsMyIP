@@ -2,6 +2,7 @@ $(document).ready(function(){
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(event){
 		event.preventDefault();
+
 		//store context in variable to use in .done
 		var interfaceDiv = $(this)
 		var interfaceId = $(this).parent().parent().attr('id');
@@ -11,7 +12,17 @@ $(document).ready(function(){
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
-			interfaceDiv.closest("tr").remove();
+			
+			setTimeout(function(){ 
+				interfaceDiv.closest("tr").fadeOut(400, function(){
+					$(this).remove();
+
+				});
+
+			}
+
+				, 500);
+
 		})
 	});
 	
@@ -37,5 +48,11 @@ $(document).ready(function(){
 			$(".list ").append(options);
 		})
 	});
+
+	$('table').on('click', 'i#remove_int_btn', function(e){
+		$(this).parent().parent().addClass('delete_row');
+		$(this).parent().parent().addClass('animated fadeOutDownBig');
+		$('.data-row').addClass('animated fadeInUp');
+	})
 
 });

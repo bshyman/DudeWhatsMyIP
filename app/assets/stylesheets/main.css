@@ -1,6 +1,7 @@
 .content {
 
-	height: 100%;
+	max-height: 3000px;
+	min-height: 1000px;
 	padding: 40px 40px 40px 40px;
 	background-size: cover;
 	background-image: url('abstract_whites.jpg');
@@ -18,17 +19,18 @@
 	/*border: 1px solid;*/
 }
 nav {
-	height: 80px;
+	height: 100px;
 }
 h1.navbar-text {
 	text-align: left;
 	padding-left: 20px;
 	padding-top: 15px;
+	font-family: initial;
 }
 
 table.table {
 	opacity: 0.75;
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Varela Round', 'sans serif';
 	zoom: 70%;
 	background-color: #999DA0 !important;
 	margin: auto;
@@ -63,14 +65,13 @@ tbody > tr.trow:hover * {
 	width: 20px;
 }
 
-* {
-	text-align: center;
-	font-family: Verdana;
-}
+
 
 
 .delete_row {
-	-webkit-animation-duration: 8s;
+	-webkit-animation-duration: 3s !important;
+	animation-duration: 10s;
+
 }
 
 
