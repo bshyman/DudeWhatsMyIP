@@ -18,13 +18,13 @@ class InterfacesController < ApplicationController
 		@interface = Interface.new(interface_params)
 		if @interface.save
 			if request.xhr?
-				p "AJJJJJAX"
 				render json: @interface
 			else
-				p "UGHHH"
+				redirect_to root_path
 			end
 		else
-			p "DATABASE ENTRY ERRROR"
+			p "DATABASE SAVE ERRROR"
+			flash[:error] = "ERROR"
 		end
 	end
 
@@ -34,9 +34,9 @@ class InterfacesController < ApplicationController
 			@interface.to_json
 			@interface.destroy
 		else
-			p "IN ELLLLLLLSE"
+			@interface.destroy
+			redirect_to root_path
 		end
-
 	end
 
   private
