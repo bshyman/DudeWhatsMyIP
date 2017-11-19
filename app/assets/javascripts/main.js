@@ -12,19 +12,22 @@ $(document).ready(function(){
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
+			interfaceDiv.closest("tr").addClass('animated fadeInUp');
+			$(this).remove();
+		});
 			
-			setTimeout(function(){ 
-				interfaceDiv.closest("tr").fadeOut(400, function(){
-					$(this).remove();
+			// setTimeout(function(){
+			// interfaceDiv.closest("tr").removeClass('animated fadeOutDownBig');
+			// console.log(interfaceDiv.nextAll('tr'))
 
-				});
 
-			}
-
-				, 500);
-
-		})
+			// $('tr.data-row').addClass('animated fadeInUp')
+			// , 5000})
 	});
+
+		
+
+
 	
 	// Add row ajax call
 	$("form.add_int_form").on("submit", function(event){
@@ -49,10 +52,6 @@ $(document).ready(function(){
 		})
 	});
 
-	$('table').on('click', 'i#remove_int_btn', function(e){
-		$(this).parent().parent().addClass('delete_row');
-		$(this).parent().parent().addClass('animated fadeOutDownBig');
-		$('.data-row').addClass('animated fadeInUp');
-	})
+
 
 });

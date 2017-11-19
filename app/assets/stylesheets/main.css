@@ -1,11 +1,15 @@
+body {
+	background-size: fill;
+	background-image: url('skulls.jpg');
+}
+
 .content {
 
 	max-height: 3000px;
 	min-height: 1000px;
 	padding: 40px 40px 40px 40px;
-	background-size: cover;
-	background-image: url('abstract_whites.jpg');
-	border: 1px solid;
+	
+	/*border: 1px solid;*/
 
 
 }
@@ -14,29 +18,39 @@
 * {
 	text-align: center;
 	font-size: 26px;
-	color: black;
+	color: #01A2A6;
 	line-height: 1.5em;
 	/*border: 1px solid;*/
 }
 nav {
 	height: 100px;
+	/*background: rgba(0, 0, 0, 0.5) !important;*/
+	opacity: .75;
+
+
 }
 h1.navbar-text {
-	text-align: left;
+	text-align: center;
 	padding-left: 20px;
 	padding-top: 15px;
 	font-family: initial;
+	color: black !important;
+	text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
+
+
 }
 
 table.table {
-	opacity: 0.75;
 	font-family: 'Varela Round', 'sans serif';
 	zoom: 70%;
-	background-color: #999DA0 !important;
+	/*background-color: #999DA0 !important;*/
 	margin: auto;
-	border: 5px solid;
+	border: 10px solid #01A2A6;
 	border-radius: 30px !important;
 	/*position: relative;*/
+		/*opacity: 0.55 !important;*/
+	background: rgba(0, 0, 0, 0.5);
+
 	border-collapse: separate !important;
 }
 
@@ -52,17 +66,21 @@ td, th {
 
 
 
-tr {
-	border-bottom: 5px #333A41 !important;
-}
-
 tbody > tr.trow:hover * {
-	background-color: #01A2A6;
+
 }
 
 .add_int, .minus_img {
 	height: 20px;
 	width: 20px;
+}
+
+input {
+	background-color: yellow;
+	box-shadow: 0 0 1em silver;
+	background: rgba(204, 121, 121, 0.20);
+
+
 }
 
 
