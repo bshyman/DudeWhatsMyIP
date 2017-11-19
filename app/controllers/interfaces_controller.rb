@@ -2,7 +2,7 @@ class InterfacesController < ApplicationController
 	respond_to :html, :js
 
 	def index
-		@interfaces = Interface.all
+		@interfaces = Interface.order('created_at DESC')
 	end
 
 	def show
