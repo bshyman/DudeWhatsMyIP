@@ -12,8 +12,9 @@ $(document).ready(function(){
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
-			interfaceDiv.closest("tr").addClass('animated fadeInUp');
-			$(this).remove();
+			console.log(interfaceDiv.parent().parent())
+			$(interfaceDiv).parent().parent().hide();
+			interfaceDiv.parent().parent().next('tr').addClass('animated fadeInUp');
 		});
 			
 			// setTimeout(function(){
@@ -48,7 +49,7 @@ $(document).ready(function(){
 		  	  "<td>"+response.ddns+"</td>" +
 		  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
 	  	  "</tr>";
-			$(".list ").append(options);
+			$(".list ").prepend(options);
 		})
 	});
 
