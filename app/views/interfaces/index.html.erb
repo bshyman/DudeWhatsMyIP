@@ -22,11 +22,11 @@
   <tbody class="list">
     <% @interfaces.each do |int| %>
       <tr class="trow data-row" id="<%= int.id %>">
-        <th scope="row"><%= int.ip %></th>
-        <td><%= int.hostname %></td>
+        <th scope="row"><a href="http://<%= int.ip %>"><%= int.ip %></a></th>
+        <td><a href="http://<%= int.ip %>"><%= int.hostname %></a></td>
         <td><%= int.port %></td>
-        <td><%= int.ddns %></td>
-        <td ><i id="remove_int_btn" class="fa fa-2x fa-trash" aria-hidden="true"></i></td>
+        <td><a href="http://<%= int.ddns %>"><%= int.ddns %></a></td>
+        <td ><i id="remove_int_btn" class="fa fa-2x fa-trash " aria-hidden="true"></i></td>
       </tr>
     <% end %>
   </tbody>
