@@ -13,18 +13,21 @@ $(document).ready(function(){
 			type: "DELETE"
 		}).done(function(response){
 			console.log(interfaceDiv.parent().parent())
-			$(interfaceDiv).parent().parent().hide();
-			interfaceDiv.parent().parent().next('tr').addClass('animated fadeInUp');
+			$(interfaceDiv).parent().parent().addClass('animated flipOutX');
+			$(interfaceDiv).parent().parent().remove();
+			interfaceDiv.parent().parent().nextAll('tr').addClass('animated fadeInUp');
 		});
+			$('tr').removeClass('animated fadeInUp')
+		
 			
 			// setTimeout(function(){
 			// interfaceDiv.closest("tr").removeClass('animated fadeOutDownBig');
 			// console.log(interfaceDiv.nextAll('tr'))
 
 
-			// $('tr.data-row').addClass('animated fadeInUp')
 			// , 5000})
 	});
+
 
 		
 

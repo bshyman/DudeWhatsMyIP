@@ -1,5 +1,5 @@
 body {
-	background-size: fill;
+	background-size: contain;
 	background-image: url('skulls.jpg');
 }
 
@@ -17,16 +17,22 @@ body {
 
 * {
 	text-align: center;
-	font-size: 26px;
+	font-size: 30px;
 	color: #01A2A6;
 	line-height: 1.5em;
+	/*text-decoration: none;*/
 	/*border: 1px solid;*/
+	/*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+
 }
 nav {
 	height: 100px;
 	/*background: rgba(0, 0, 0, 0.5) !important;*/
 	opacity: .75;
-
+}
+a {
+	text-decoration: none !important;
+	color: inherit !important;
 
 }
 h1.navbar-text {
@@ -34,9 +40,9 @@ h1.navbar-text {
 	padding-left: 20px;
 	padding-top: 15px;
 	font-family: initial;
-	color: black !important;
-	text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
-
+	color: silver !important;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	
 
 }
 
