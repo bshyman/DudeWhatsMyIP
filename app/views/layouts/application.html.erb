@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
- 
+
 
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
@@ -26,7 +26,12 @@
   <h1 class="navbar-text">IP Address Management</h1>
   </nav>
 </header>
+  <% if current_user %>
+   <span class='white'><%= current_user.inspect%></span>
+  <% else %>
 
+  <div><a href="/auth/google">Sign in with Google</a></div>
+  <% end %>
   <div class="content">
   <%= render "flashes" -%>
   <%= yield %>
@@ -35,7 +40,7 @@
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>  
+  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
   <!-- popper -->
