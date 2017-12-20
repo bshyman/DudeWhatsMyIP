@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
- 
+
 
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
@@ -26,6 +26,14 @@
   <h1 class="navbar-text">IP Address Management</h1>
   </nav>
 </header>
+<div>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Google", "/auth/google", id: "sign_in" %>
+      <% end %>
+    </div>
 
   <div class="content">
   <%= render "flashes" -%>
@@ -35,7 +43,7 @@
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>  
+  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
   <!-- popper -->
