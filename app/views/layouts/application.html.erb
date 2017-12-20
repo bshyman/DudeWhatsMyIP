@@ -23,15 +23,10 @@
 <header id="header">
   <nav class="navbar-nav navbar-dark bg-dark">
 
-  <h1 class="navbar-text">IP Address Management</h1>
+  <div class="navbar-text">IP Address Management</div>
+
   </nav>
 </header>
-  <% if current_user %>
-   <span class='white'><%= current_user.inspect%></span>
-  <% else %>
-
-  <div><a href="/auth/google">Sign in with Google</a></div>
-  <% end %>
   <div class="content">
   <%= render "flashes" -%>
   <%= yield %>
@@ -49,5 +44,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <%= render "javascript" %>
   <%= render "css_overrides" %>
+
+</div>
+<footer>
+  <nav class="navbar fixed-bottom">
+    <span class='btn-group'>
+    <% if current_user %>
+
+     <span class='white btn'>Logged in as <%= current_user.email%></span>
+      <%= link_to 'Logout', logout_path, class:'btn' %>
+    <% else %>
+    <%= link_to 'Login with Google', login_path, class:"btn btn-secondary btn-lg btn-block" %>
+
+    <% end %>
+  </span>
+    </span>
+
+
+
+  </nav>
+</footer>
 </body>
 </html>
