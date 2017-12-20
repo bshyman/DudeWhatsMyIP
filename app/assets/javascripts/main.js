@@ -2,6 +2,7 @@ $(document).ready(function(){
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(event){
 		event.preventDefault();
+
 		//store context in variable to use in .done
 		var interfaceDiv = $(this)
 		var interfaceId = $(this).parent().parent().attr('id');
@@ -11,9 +12,26 @@ $(document).ready(function(){
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
-			interfaceDiv.closest("tr").remove();
-		})
+			console.log(interfaceDiv.parent().parent())
+			$(interfaceDiv).parent().parent().addClass('animated flipOutX');
+			$(interfaceDiv).parent().parent().remove();
+			interfaceDiv.parent().parent().nextAll('tr').addClass('animated fadeInUp');
+		});
+			$('tr').removeClass('animated fadeInUp')
+		
+			
+			// setTimeout(function(){
+			// interfaceDiv.closest("tr").removeClass('animated fadeOutDownBig');
+			// console.log(interfaceDiv.nextAll('tr'))
+
+
+			// , 5000})
 	});
+
+
+		
+
+
 	
 	// Add row ajax call
 	$("form.add_int_form").on("submit", function(event){
@@ -34,8 +52,10 @@ $(document).ready(function(){
 		  	  "<td>"+response.ddns+"</td>" +
 		  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
 	  	  "</tr>";
-			$(".list ").append(options);
+			$(".list ").prepend(options);
 		})
 	});
+
+
 
 });
