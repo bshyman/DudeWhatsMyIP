@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  include Clearance::User
 	has_many :interfaces
 	def self.find_or_create_from_auth_hash(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
