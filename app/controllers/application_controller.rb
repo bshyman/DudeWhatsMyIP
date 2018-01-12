@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
   helper_method :current_user
 
   def authenticate
@@ -7,7 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-  	@current_user ||= User.find(session[:user_id]) if session[:user_id]
+     p "SESSSION"
+     p session[:user_id]
+    User.find(session[:user_id]) if session[:user_id]
   end
 
   def user_signed_in?

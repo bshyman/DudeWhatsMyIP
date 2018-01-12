@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
+
 
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'

@@ -1,8 +1,12 @@
 class InterfacesController < ApplicationController
 	respond_to :html, :js
+	skip_before_action  :verify_authenticity_token
+
+
 
 	def index
 		@interfaces = Interface.order('created_at DESC')
+		# byebug
 	end
 
 	def show
@@ -15,7 +19,12 @@ class InterfacesController < ApplicationController
 
 	def create
 		p params
+
 		@interface = Interface.new(interface_params)
+		p current_user
+		# byebug
+		@interface.user_id = current_user.id
+
 		if @interface.save
 			if request.xhr?
 				render json: @interface
@@ -24,6 +33,10 @@ class InterfacesController < ApplicationController
 			end
 		else
 			p "DATABASE SAVE ERRROR"
+			@interface.errors.full_messages.each do |error|
+				p error
+
+			end
 			flash[:error] = "ERROR"
 		end
 	end
@@ -41,7 +54,7 @@ class InterfacesController < ApplicationController
 
   private
     def interface_params
-      params.require(:interface).permit(:id, :ip, :hostname, :port, :ddns, :notes)
+      params.require(:interface).permit(:id, :ip, :hostname, :port, :ddns, :notes, :user_id)
     end
 
 end

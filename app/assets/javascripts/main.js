@@ -18,8 +18,8 @@ $(document).ready(function(){
 			interfaceDiv.parent().parent().nextAll('tr').addClass('animated fadeInUp');
 		});
 			$('tr').removeClass('animated fadeInUp')
-		
-			
+
+
 			// setTimeout(function(){
 			// interfaceDiv.closest("tr").removeClass('animated fadeOutDownBig');
 			// console.log(interfaceDiv.nextAll('tr'))
@@ -29,14 +29,16 @@ $(document).ready(function(){
 	});
 
 
-		
 
 
-	
+
+
 	// Add row ajax call
 	$("form.add_int_form").on("submit", function(event){
 		event.preventDefault();
-		var url = "/interfaces";
+		var currentUserId = $('span#user_status').attr('current_user');
+		console.log(currentUserId)
+		var url = "users/" + currentUserId + "/interfaces";
 		var data = $(this).serialize();
 		$.ajax({
 			url: url,
@@ -44,7 +46,7 @@ $(document).ready(function(){
 			type: 'POST'
 		}).done(function(response) {
 			console.log(response);
-		  var options = 
+		  var options =
 		  	"<tr class=\"trow data-row\" id="+response.id+">" +
 					"<th scope=\"row\">"+response.ip+"</th>" +
 		  	  "<td>"+response.hostname+"</td>" +
