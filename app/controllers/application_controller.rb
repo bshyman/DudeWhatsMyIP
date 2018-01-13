@@ -8,9 +8,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-     p "SESSSION"
-     p session[:user_id]
-    User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id]
+       User.find(session[:user_id])
+    else
+      redirect_to login_path
+      flash[:notice] = "Please Log In"
+    end
   end
 
   def user_signed_in?

@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$.get('/current_user_route', function(result){
+		console.log(result)
+	});
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(event){
 		event.preventDefault();
@@ -7,6 +10,7 @@ $(document).ready(function(){
 		var interfaceDiv = $(this)
 		var interfaceId = $(this).parent().parent().attr('id');
 		var $data = $(this).serialize();
+		console.log(user)
 		$.ajax({
 			url: "interfaces/" + interfaceId,
 			data: $data,

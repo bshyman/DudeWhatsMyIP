@@ -18,8 +18,6 @@ class InterfacesController < ApplicationController
 	end
 
 	def create
-		p params
-
 		@interface = Interface.new(interface_params)
 		p current_user
 		# byebug
