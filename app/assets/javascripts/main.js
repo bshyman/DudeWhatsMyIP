@@ -1,11 +1,9 @@
 $(document).ready(function(){
-		// current_user object
-		$.get('/current_user_route', function(result){
-			return result
-		});
-		var currentUserId = document.getElementsByTagName('span')[1].getAttribute('cu');
-
-
+	// current_user
+	var currentUserId = document.getElementsByTagName('span')[1].getAttribute('cu');
+		// $.get('/current_user_route', function(result){
+		// 	return result
+		// });
 
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(event){
@@ -26,34 +24,20 @@ $(document).ready(function(){
 			interfaceDiv.parent().parent().nextAll('tr').addClass('animated fadeInUp');
 		});
 			$('tr').removeClass('animated fadeInUp')
-
-
-			// setTimeout(function(){
-			// interfaceDiv.closest("tr").removeClass('animated fadeOutDownBig');
-			// console.log(interfaceDiv.nextAll('tr'))
-
-
-			// , 5000})
 	});
-
-
-
-
-
 
 	// Add row ajax call
 	$("form.add_int_form").on("submit", function(event){
 		event.preventDefault();
-		var currentUserId = $('span#user_status').attr('current_user');
-		console.log(currentUserId)
-		var url = "users/" + currentUserId + "/interfaces";
+		var currentUserId = $('span#user_status').attr('cu');
+		// var url = "users/" + currentUserId + "/interfaces";
 		var data = $(this).serialize();
+		// console.log(url)
 		$.ajax({
-			url: url,
-			data: data,
-			type: 'POST'
+			type: 'POST',
+			// url: "users/" + currentUserId + "/interfaces",
+			data: data
 		}).done(function(response) {
-			console.log(response);
 		  var options =
 		  	"<tr class=\"trow data-row\" id="+response.id+">" +
 					"<th scope=\"row\">"+response.ip+"</th>" +
