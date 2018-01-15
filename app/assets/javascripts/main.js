@@ -1,7 +1,12 @@
 $(document).ready(function(){
-	$.get('/current_user_route', function(result){
-		console.log(result)
-	});
+		// current_user object
+		$.get('/current_user_route', function(result){
+			return result
+		});
+		var currentUserId = document.getElementsByTagName('span')[1].getAttribute('cu');
+
+
+
 	// Remove row ajax call
 	$("table.table").on("click", "i#remove_int_btn", function(event){
 		event.preventDefault();
@@ -10,9 +15,8 @@ $(document).ready(function(){
 		var interfaceDiv = $(this)
 		var interfaceId = $(this).parent().parent().attr('id');
 		var $data = $(this).serialize();
-		console.log(user)
 		$.ajax({
-			url: "interfaces/" + interfaceId,
+			url: "users/" + currentUserId + "/interfaces/" + interfaceId,
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
