@@ -24,8 +24,10 @@ gem "sprockets", ">= 3.0.0"
 gem "suspenders"
 gem "title"
 gem "uglifier"
-gem "clearance"
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+gem 'omniauth-google-oauth2'
+
+
 
 
 

@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
- 
+
 
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
+
   <!-- fontAwesome -->
   <script src="https://use.fontawesome.com/0e783adfae.js"></script>
   <!-- Animate.css -->
@@ -23,7 +24,8 @@
 <header id="header">
   <nav class="navbar-nav navbar-dark bg-dark">
 
-  <h1 class="navbar-text">IP Address Management</h1>
+  <div class="navbar-text">IP Address Management</div>
+
   </nav>
 </header>
 
@@ -35,7 +37,7 @@
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>  
+  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
   <!-- popper -->
@@ -44,5 +46,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <%= render "javascript" %>
   <%= render "css_overrides" %>
+
+</div>
+<footer>
+  <nav class="navbar fixed-bottom">
+    <span class='btn-group'>
+    <% if current_user %>
+
+     <span cu='<%= current_user.id %>' class='white btn' id='user_status'>Logged in as <%= current_user.email%></span>
+      <%= link_to 'Logout', logout_path, class:'btn' %>
+    <% else %>
+    <%= link_to 'Login with Google', login_path, class:"btn btn-secondary btn-lg btn-block" %>
+
+    <% end %>
+  </span>
+    </span>
+
+
+
+  </nav>
+</footer>
 </body>
 </html>
