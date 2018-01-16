@@ -45,8 +45,8 @@ $(document).ready(function(){
 		  	  "<td>"+response.hostname+"</td>" +
 		  	  "<td>"+response.port+"</td>" +
 		  	  "<td>"+response.ddns+"</td>" +
-		  	  "<td><button type='button'  id='details-btn' data-toggle='modal' data-target='.bd-example-modal-lg'><i class='fa fa-info-circle' aria-hidden='true'></i>
-</button></td>" +
+		  	  "<td><button type=\"button\" id=\"details-btn\" data-toggle=\"modal\" data-target=\".bd-example-modal-lg\"><i class=\"fa fa-info-circle\" aria-hidden=\"true\"></i></button></td>"
+		  	  +
 	  	  "</tr>";
 			$(".list ").prepend(options);
 		})

@@ -106,3 +106,16 @@ button#details-btn {
 	border: none;
 	font-size: 1.6em;
 }
+
+img#logo {
+	width: 280px;
+	height: 220px;
+	left: 20px;
+	top: -50px;
+	position: absolute;
+
+}
+
+
+
+
