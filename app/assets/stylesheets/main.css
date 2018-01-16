@@ -101,5 +101,8 @@ footer  * {
 	color: white;
 }
 
-
-
+button#details-btn {
+	background-color: inherit;
+	border: none;
+	font-size: 1.6em;
+}

@@ -25,10 +25,25 @@
         <td><a href="http://<%= int.ip %>"><%= int.hostname %></a></td>
         <td><%= int.port %></td>
         <td><a href="http://<%= int.ddns %>"><%= int.ddns %></a></td>
-        <td ><i id="remove_int_btn" class="fa fa-2x fa-trash " aria-hidden="true"></i></td>
+        <!-- <td ><i id="remove_int_btn" class="fa fa-2x fa-trash " aria-hidden="true"></i></td> -->
+          <!-- Large modal -->
+        <td>
+<button type="button"  id='details-btn' data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-info-circle" aria-hidden="true"></i>
+</button></td>
       </tr>
     <% end %>
   </tbody>
 
 </table>
+
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
 

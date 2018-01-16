@@ -14,7 +14,8 @@ $(document).ready(function(){
 		var interfaceId = $(this).parent().parent().attr('id');
 		var $data = $(this).serialize();
 		$.ajax({
-			url: "users/" + currentUserId + "/interfaces/" + interfaceId,
+			// url: "users/" + currentUserId + "/interfaces/" + interfaceId,
+			url: interfaceId,
 			data: $data,
 			type: "DELETE"
 		}).done(function(response){
@@ -44,7 +45,8 @@ $(document).ready(function(){
 		  	  "<td>"+response.hostname+"</td>" +
 		  	  "<td>"+response.port+"</td>" +
 		  	  "<td>"+response.ddns+"</td>" +
-		  	  "<td ><i id=\"remove_int_btn\" class=\"fa fa-2x fa-trash\" aria-hidden=\"true\"></i></td>" +
+		  	  "<td><button type='button'  id='details-btn' data-toggle='modal' data-target='.bd-example-modal-lg'><i class='fa fa-info-circle' aria-hidden='true'></i>
+</button></td>" +
 	  	  "</tr>";
 			$(".list ").prepend(options);
 		})

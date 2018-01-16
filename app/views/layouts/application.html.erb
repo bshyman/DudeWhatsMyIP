@@ -52,9 +52,8 @@
   <nav class="navbar fixed-bottom">
     <span class='btn-group'>
     <% if current_user %>
-
-     <span cu='<%= current_user.id %>' class='white btn' id='user_status'>Logged in as <%= current_user.email%></span>
-      <%= link_to 'Logout', logout_path, class:'btn' %>
+     <span cu='<%= current_user.id %>' class="btn btn-secondary btn-lg btn-block" id='user_status'>Logged in as <%= current_user.email%></span>
+      <%= link_to 'Logout', logout_path, class:"btn btn-secondary btn-lg btn-block" %>
     <% else %>
     <%= link_to 'Login with Google', login_path, class:"btn btn-secondary btn-lg btn-block" %>
 
