@@ -33,16 +33,7 @@ a {
 	color: inherit !important;
 
 }
-h1.navbar-text {
-	text-align: center;
-	padding-left: 20px;
-	padding-top: 15px;
-	font-family: initial;
-	color: silver !important;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
-
-}
 
 table.table {
 	font-family: 'Varela Round', 'sans serif';
@@ -101,5 +92,72 @@ footer  * {
 	color: white;
 }
 
+button#details-btn {
+	background-color: inherit;
+	border: none;
+	font-size: 1.6em;
+}
 
+img#logo {
+	width: 280px;
+	height: 220px;
+	left: 20px;
+	top: -50px;
+	position: absolute;
+
+}
+
+#cog {
+	top: 20px;
+	right: 25px;
+	color: red;
+	position: absolute;
+}
+
+.login-btn {
+
+	font-size: 1.2em;
+	font-family: Helvetica;
+	background-color: #00AF43;
+	border-radius: 10px;
+	width: 70% !important;
+	margin: auto;
+
+}
+
+.login-btn > i, #user_status, #navbarToggleExternalContent > div > span > span:nth-child(2) > a {
+	color: black !important;
+
+}
+
+.tooltip-inner {
+    min-width: 300px !important;
+    max-width: 500px !important;
+}
+
+#navbarToggleExternalContent > div > span > div {
+	display: flex;
+	justify-content: space-between;
+	background-color:#00B2D9;
+	border-radius:10px;
+}
+/*#navbarToggleExternalContent > div > span > div*/
+
+
+.menu-btns {
+	color: black !important;
+	border-radius: 10px;
+	padding: 10px 16px 0px 16px;
+	max-width: 800px;
+	margin: 8px 15px 10px 15px !important;
+}
+
+#navbarToggleExternalContent > div > span > div > div.card-header > ul > li:nth-child(3) {
+	margin-bottom: 5px;
+}
+#navbarToggleExternalContent > div > span > div > div.card-header > ul > li:nth-child(4) > span:nth-child(2) > a {
+	right: 20px;
+	top: -7px;
+	position: absolute;
+}
 
