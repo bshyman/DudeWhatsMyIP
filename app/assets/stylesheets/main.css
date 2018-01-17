@@ -123,4 +123,22 @@ img#logo {
 	position: absolute;
 }
 
+#login-btn {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 1.2em;
+	font-family: Helvetica;
+	background-color: #00B2D9;
+
+}
+
+#login-btn > i {
+	color: black;
+
+}
+
+#header > div > nav {
+	margin-top: 10px;
+}
 
