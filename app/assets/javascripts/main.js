@@ -52,6 +52,14 @@ $(document).ready(function(){
 		})
 	});
 
+	// Spin cog on hover
+	$('#cog').on('mouseover', function(){
+		$(this).addClass('fa-spin');
+		$(this).on('mouseout', function(){
+			$(this).removeClass('fa-spin')
+		})
+	})
+
 
 
 });
