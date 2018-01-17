@@ -52,7 +52,6 @@ GEM
     autoprefixer-rails (7.1.4)
       execjs
     awesome_print (1.8.0)
-    bcrypt (3.1.11)
     bindex (0.5.0)
     bitters (1.7.0)
       bourbon (~> 5.0.0.beta.7)
@@ -77,10 +76,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    clearance (1.16.1)
-      bcrypt
-      email_validator (~> 1.4)
-      rails (>= 3.1)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
@@ -97,8 +92,6 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
-    email_validator (1.6.0)
-      activemodel
     erubi (1.6.1)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -316,7 +309,6 @@ DEPENDENCIES
   awesome_print
   bullet
   bundler-audit (>= 0.5.0)
-  clearance
   database_cleaner
   delayed_job_active_record
   dotenv-rails
