@@ -1,2 +1,2 @@
-# IPAM4B
-IP and DNS Name and Address Organization Tool
+# IntraNeat
+An IP Addressbook that stores network addresses, ddns names, ports and more.
