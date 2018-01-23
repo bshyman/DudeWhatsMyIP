@@ -44,7 +44,7 @@ table.table {
 	border-radius: 30px !important;
 	/*position: relative;*/
 		/*opacity: 0.55 !important;*/
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.75);
 
 	border-collapse: separate !important;
 }
@@ -110,7 +110,7 @@ img#logo {
 #cog {
 	top: 20px;
 	right: 25px;
-	color: red;
+	color: #00A7A8;
 	position: absolute;
 }
 
@@ -138,7 +138,7 @@ img#logo {
 #navbarToggleExternalContent > div > span > div {
 	display: flex;
 	justify-content: space-between;
-	background-color:#00B2D9;
+	background-color:#00A7A8;
 	border-radius:10px;
 }
 /*#navbarToggleExternalContent > div > span > div*/
