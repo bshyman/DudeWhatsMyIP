@@ -309,6 +309,7 @@ DEPENDENCIES
   awesome_print
   bullet
   bundler-audit (>= 0.5.0)
+  byebug
   database_cleaner
   delayed_job_active_record
   dotenv-rails
@@ -352,4 +353,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.1

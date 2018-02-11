@@ -1,19 +1,22 @@
 class InterfacesController < ApplicationController
   # respond_to :html, :js
   skip_before_action  :verify_authenticity_token
+  before_action :set_interface, except: [:index, :new, :create]
 
   def index
     @interfaces = Interface.order('created_at DESC')
   end
 
   def show
-    @interface = Interface.find(params[:id])
     if request.xhr?
       render json: @interface, layout: false
     end
   end
 
   def new
+  end
+
+  def edit
   end
 
   def create
@@ -31,8 +34,21 @@ class InterfacesController < ApplicationController
     end
   end
 
+def update
+    respond_to do |format|
+      @interface.assign_attributes(interface_params)
+      if @interface.save
+        format.html { redirect_to user_interfaces_path, notice: 'Gift was successfully updated.' }
+        format.json { render :show, status: :ok, location: @interface }
+      else
+        format.html { render :edit }
+        format.json { render json: @interface.errors, status: :unprocessable_entity }
+      end
+    end
+end
+
+
   def destroy
-    @interface = Interface.find(params[:id])
     if request.xhr?
       @interface.to_json
       @interface.destroy
@@ -40,6 +56,11 @@ class InterfacesController < ApplicationController
       @interface.destroy
       redirect_to root_path
     end
+  end
+
+  def set_interface
+      @interface = Interface.find(params[:id])
+
   end
 
   private

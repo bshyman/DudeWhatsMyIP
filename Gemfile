@@ -26,6 +26,7 @@ gem "title"
 gem "uglifier"
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem 'omniauth-google-oauth2'
+gem 'byebug'
 
 
 

@@ -161,3 +161,25 @@ img#logo {
 	position: absolute;
 }
 
+#detailsModal .modal-content {
+	background-color:#00A7A8;
+	color: black;
+}
+
+#notes > textarea {
+	width: fill;
+	height: 90px;
+	color: black;
+	background-color: #E9ECEF;
+	border-top: none;
+
+}
+
+#notes > span {
+	border-bottom: none;
+}
+
+
+#saveEdit {
+	color: black;
+}

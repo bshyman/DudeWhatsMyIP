@@ -14,7 +14,6 @@ $(document).ready(function(){
 		var interfaceId = $(this).parent().parent().attr('id');
 		var $data = $(this).serialize();
 		$.ajax({
-			// url: "users/" + currentUserId + "/interfaces/" + interfaceId,
 			url: interfaceId,
 			data: $data,
 			type: "DELETE"
@@ -60,6 +59,9 @@ $(document).ready(function(){
 		})
 	})
 
+	$('#details-btn').on('click', function(){
+		$('#detailsModal').show();
+	})
 
 
 });

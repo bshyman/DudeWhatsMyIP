@@ -8,29 +8,38 @@
       <th></th>
     </tr>
     <tr class="trow">
-    	<%= simple_form_for :interface, html: {class:"add_int_form"} do |f| %>
-		<th><%= f.input_field :ip %></th>
-		<th><%= f.input_field :hostname %></th>
-		<th><%= f.input_field :port %></th>
-		<th><%= f.input_field :ddns %></th>
-		<th><%= image_submit_tag ("plus.png"), class:"add_int"%></th>
-		<% end %>
+      <%= render '/interfaces/new' %>
     </tr>
   </thead>
 
   <tbody class="list">
-    <% @interfaces.each do |int| %>
-      <tr class="trow data-row" id="<%= int.id %>">
-        <th scope="row"><a href="http://<%= int.ip %>"><%= int.ip %></a></th>
-        <td><a href="http://<%= int.ip %>"><%= int.hostname %></a></td>
-        <td><%= int.port %></td>
-        <td><a href="http://<%= int.ddns %>"><%= int.ddns %></a></td>
+    <% @interfaces.each do |interface| %>
+      <tr class="trow data-row" id="<%= interface.id %>">
+        <th scope="row"><a href="http://<%= interface.ip %>"><%= interface.ip %></a></th>
+        <td><a href="http://<%= interface.ip %>"><%= interface.hostname %></a></td>
+        <td><%= interface.port %></td>
+        <td><a href="http://<%= interface.ddns %>"><%= interface.ddns %></a></td>
         <!-- <td ><i id="remove_int_btn" class="fa fa-2x fa-trash " aria-hidden="true"></i></td> -->
           <!-- Large modal -->
         <td>
 <button type="button"  id='details-btn' data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-info-circle" aria-hidden="true"></i>
 </button></td>
       </tr>
+
+
+
+
+<!-- Modal -->
+<div id='detailsModal' class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <%= render partial: "interfaces/edit", interface: interface %>
+    </div>
+  </div>
+</div>
+
+
     <% end %>
   </tbody>
 
@@ -38,11 +47,12 @@
 
 
 
+
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id='detailsModal' class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      ...
+        <h2>MODAL</h2>
     </div>
   </div>
 </div>
