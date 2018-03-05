@@ -9,22 +9,22 @@ class InterfacesController < ApplicationController
   def show
     @interface = Interface.find(params[:id])
     if request.xhr?
-      render json: @interface, layout: false
+      render @interface, layout: false
     end
   end
 
   def new
     @interface = Interface.new
-
+    respond_to do |format|
+      format.html
+      format.json  { render :json => @interface }
+    end
+    render 'new', layout: false
   end
 
   def create
-    p interface_params
     @interface = Interface.new(interface_params)
-    # byebug
-    p @interface
     @interface.assign_attributes(user_id: session[:user_id])
-    p @interface
     if @interface.save
       if request.xhr?
         render json: @interface, layout:false

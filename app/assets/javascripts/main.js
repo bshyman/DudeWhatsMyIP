@@ -27,8 +27,26 @@ $(document).ready(function(){
 			$('tr').removeClass('animated fadeInUp')
 	});
 
+
+	$('.add-interface-form').on('click', function(e){
+		e.preventDefault();
+		var currentUserId = $('span#user_status').attr('cu');
+		var url = '/users/' + currentUserId + '/interfaces/new';
+		$.ajax({
+			dataType: "html",
+			// data: {interface: interface},
+			url: url
+		}).done(function(response){
+			console.log(response)
+		$('span.ajax-form').html(response);
+		$('.new-interface-form').addClass('animated jackInTheBox')
+		$('#header > div > nav').addClass('animated fadeOutDown');
+		$('.navbar-target').addClass('animated zoomOut');
+		$('table.table').addClass('raise-table animated slideInUp');
+			});
+	});
 	// Add row ajax call
-	$("form.add_int_form").on("submit", function(event){
+	$("form.new-interface-form").on("submit", function(event){
 		event.preventDefault();
 		var currentUserId = $('span#user_status').attr('cu');
 		// var url = "users/" + currentUserId + "/interfaces";

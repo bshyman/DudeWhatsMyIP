@@ -126,7 +126,7 @@ img#logo {
 #navbarToggleExternalContent > div > span > div {
 	display: flex;
 	justify-content: space-between;
-	background-color:#00B2D9;
+	background-color:#5F5F5F;
 	border-radius:10px;
 }
 /*#navbarToggleExternalContent > div > span > div*/
@@ -152,4 +152,15 @@ img#logo {
 	background-color: #5B5B5B;
 	padding: 20px 0px;
 	line-height: 1em;
+	margin-top: 5%;
+}
+
+form.new_interface {
+	width: 100%;
+
+}
+
+.raise-table {
+	position:relative;
+	bottom: 260px
 }
