@@ -45,6 +45,7 @@
 </header>
 <div class="content">
   <%= render "flashes" -%>
+  <%= current_user.email if current_user  %>
   <%= yield %>
 </div>
 <!-- jQuery -->

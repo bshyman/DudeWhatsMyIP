@@ -1,5 +1,5 @@
 class InterfacesController < ApplicationController
-  # respond_to :html, :js
+  respond_to :html, :js
   skip_before_action  :verify_authenticity_token
 
   def index
@@ -14,16 +14,22 @@ class InterfacesController < ApplicationController
   end
 
   def new
+    @interface = Interface.new
+
   end
 
   def create
+    p interface_params
     @interface = Interface.new(interface_params)
-    @interface.user_id = current_user.id
+    # byebug
+    p @interface
+    @interface.assign_attributes(user_id: session[:user_id])
+    p @interface
     if @interface.save
       if request.xhr?
         render json: @interface, layout:false
       else
-        redirect_to root_path
+        redirect_to user_interfaces_path(@interface.user_id)
       end
     else
       @interface.errors.full_messages.each{|error| p error }
@@ -41,6 +47,8 @@ class InterfacesController < ApplicationController
       redirect_to root_path
     end
   end
+
+
 
   private
   def interface_params

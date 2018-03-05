@@ -26,6 +26,10 @@ gem "title"
 gem "uglifier"
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem 'omniauth-google-oauth2'
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
+
 
 
 
@@ -37,6 +41,7 @@ group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+
 end
 
 group :development, :test do
@@ -50,6 +55,8 @@ group :development, :test do
   gem "rspec-rails", "~> 3.6"
   gem 'meta_request'
   gem "responders"
+  gem "better_errors"
+  gem "binding_of_caller" 
 end
 
 group :test do

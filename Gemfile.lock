@@ -6,6 +6,14 @@ GIT
     faker (1.8.4)
       i18n (~> 0.5)
 
+GIT
+  remote: https://github.com/bootstrap-ruby/bootstrap_form.git
+  revision: ee605d7173a3c216cc738ac04694e6b1ff886efb
+  branch: master
+  specs:
+    bootstrap_form (4.0.0.dev)
+      rails (>= 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,7 +60,13 @@ GEM
     autoprefixer-rails (7.1.4)
       execjs
     awesome_print (1.8.0)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bitters (1.7.0)
       bourbon (~> 5.0.0.beta.7)
       sass (~> 3.4)
@@ -81,6 +95,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.6.1)
+    debug_inspector (0.0.3)
     delayed_job (4.1.3)
       activesupport (>= 3.0, < 5.2)
     delayed_job_active_record (4.1.2)
@@ -307,6 +322,9 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   awesome_print
+  better_errors
+  binding_of_caller
+  bootstrap_form!
   bullet
   bundler-audit (>= 0.5.0)
   database_cleaner
@@ -352,4 +370,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.1

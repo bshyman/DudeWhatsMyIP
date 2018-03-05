@@ -1,0 +1,18 @@
+ 	
+
+<div class="container new-interface-form">
+ 	<%#= simple_form_for @interface,  url: user_interfaces_path,  method: 'post', id: params[:user_id] do |f| %>
+	<%= bootstrap_form_for(@interface, layout: :horizontal, label_col: "col-lg-3", control_col: "col-lg-9", url: user_interfaces_path,  method: 'post', id: params[:user_id]) do |f| %>
+			
+		<%= f.text_field :ip,  placeholder: '192.168.1.1', label: 'IP Address' %>
+		<%= f.text_field :hostname,  placeholder: 'localhost', label: 'Hostname' %>
+		<%= f.text_field :port, placeholder: '3000', label: 'Port #' %>
+		<%= f.text_field :ddns,  placeholder: 'mysite.me.net', label: 'DDNS Address' %>
+		<%= f.submit 'Submit'%>
+
+
+
+	<% end %>
+
+
+</div>

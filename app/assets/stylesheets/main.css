@@ -5,11 +5,9 @@ body {
 }
 
 .content {
-
 	max-height: 3000px;
 	min-height: 1000px;
-	padding: 40px 40px 40px 40px;
-
+	padding: 40px 20px 30px 20px;
 }
 
 
@@ -17,7 +15,6 @@ body {
 	text-align: center;
 	font-size: 30px;
 	color: #01A2A6;
-	line-height: 1.5em;
 	/*text-decoration: none;*/
 	/*border: 1px solid;*/
 	/*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
@@ -61,15 +58,6 @@ td, th {
 
 
 
-tbody > tr.trow:hover * {
-
-}
-
-.add_int, .minus_img {
-	height: 20px;
-	width: 20px;
-}
-
 input {
 	background-color: yellow;
 	box-shadow: 0 0 1em silver;
@@ -110,7 +98,7 @@ img#logo {
 #cog {
 	top: 20px;
 	right: 25px;
-	color: red;
+	color: white;
 	position: absolute;
 }
 
@@ -160,4 +148,8 @@ img#logo {
 	top: -7px;
 	position: absolute;
 }
-
+.new-interface-form {
+	background-color: #5B5B5B;
+	padding: 20px 0px;
+	line-height: 1em;
+}

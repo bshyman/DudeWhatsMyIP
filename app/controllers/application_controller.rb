@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include InterfacesHelper
   # protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
   helper_method :current_user
@@ -15,4 +16,7 @@ class ApplicationController < ActionController::Base
   	# converts current_user to a boolean by negating the negation
   	!!current_user
   end
+
+
+ 
 end

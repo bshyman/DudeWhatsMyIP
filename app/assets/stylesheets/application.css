@@ -13,4 +13,6 @@
  *= require_tree .
  *= require_self
  *= require main.css
+ *= require rails_bootstrap_forms
+
  */

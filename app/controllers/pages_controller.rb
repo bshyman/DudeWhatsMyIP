@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-	def index
+	def visitor
+		@interfaces = fake_interfaces
+		render 'interfaces/index'
 	end
 end

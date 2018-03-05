@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
+
   resources :users do
     resources :interfaces
   end
@@ -10,7 +11,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'current_user_route', to: "users#current_user_route"
+  get 'pages/visitor', to: 'pages#visitor', as: 'visitor'
 
 
-	root 'interfaces#index'
+	root 'pages#visitor'
 end

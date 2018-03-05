@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  after_action :set_example, only: [:create]
   # GET /users
   def index
     @users = User.all
@@ -55,6 +55,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def set_example
+      @interface = Interface.create(ip: '192.168.1.1', hostname: 'localhost', port: '3000', ddns: 'myrouter.me.net', user_id: current_user.id)
     end
 
     # Only allow a trusted parameter "white list" through.

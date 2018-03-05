@@ -3,4 +3,6 @@ module ApplicationHelper
         options = options.stringify_keys
         tag :input, { "alt" => image_alt(source), "type" => "image", "src" => path_to_image(source) }.update(options)
       end
+
+     
 end
