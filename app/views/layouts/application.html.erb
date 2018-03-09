@@ -9,7 +9,9 @@
     <%= javascript_include_tag :application %>
     <%= csrf_meta_tags %>
     <!-- fontAwesome -->
-    <script src="https://use.fontawesome.com/0e783adfae.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Geo" rel="stylesheet">
@@ -21,12 +23,12 @@
     <div class="pos-f-t">
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="p-4">
-          <span class="ajax-form"></span>
+          
           <span >
             <% if current_user %>
-            <%= render 'layouts/tabs' %>
+               <%= render 'layouts/tabs' %>
 
-            <% else %>
+              <% else %>
             <%= link_to login_path, class:"login-btn  btn-block"  do %>
             <i class="fa fa-google " aria-hidden="true"> Login</i>
             <% end %>
@@ -46,7 +48,6 @@
 </header>
 <div class="content">
   <%= render "flashes" -%>
-  <%= current_user.email if current_user  %>
   <%= yield %>
 </div>
 <!-- jQuery -->

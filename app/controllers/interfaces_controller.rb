@@ -1,8 +1,10 @@
 class InterfacesController < ApplicationController
   respond_to :html, :js
   skip_before_action  :verify_authenticity_token
+  # before_filter :authenticate
 
   def index
+    # authenticate
     @interfaces = Interface.order('created_at DESC')
   end
 

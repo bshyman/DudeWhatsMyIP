@@ -1,3 +1,12 @@
+<span class="ajax-form"></span>
+  <% if user_signed_in? %>
+<div id='plus-int-btn'>
+    <%= link_to new_user_interface_path(current_user.id) do  %>
+      <i  class="fas fa-4x fa-plus-square"></i>
+  <% end %>
+  
+</div>
+<% end %>
 <table class="table table-hover table-striped">
   <thead>
     <tr>
@@ -5,7 +14,8 @@
       <th>Hostname</th>
       <th>Port</th>
       <th>DDNS</th>
-      <th></th>
+      <th>
+</th>
     </tr>
   </thead>
   <tbody class="list">

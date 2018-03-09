@@ -27,8 +27,7 @@ $(document).ready(function(){
 			$('tr').removeClass('animated fadeInUp')
 	});
 
-
-	$('.add-interface-form').on('click', function(e){
+	$('#plus-int-btn').on('click', function(e){
 		e.preventDefault();
 		var currentUserId = $('span#user_status').attr('cu');
 		var url = '/users/' + currentUserId + '/interfaces/new';
@@ -39,8 +38,10 @@ $(document).ready(function(){
 		}).done(function(response){
 			console.log(response)
 		$('span.ajax-form').html(response);
-		$('.new-interface-form').addClass('animated jackInTheBox')
+		$('.new-interface-form').addClass('animated flipInX')
 		$('#header > div > nav').addClass('animated fadeOutDown');
+		$('#plus-int-btn').css('display', 'none');
+		$('header').css('display', 'none');
 		$('.navbar-target').addClass('animated zoomOut');
 		$('table.table').addClass('raise-table animated slideInUp');
 			});

@@ -8,12 +8,11 @@
         <a class=" menu-btns" href="">About</a>
       </li>
       <li class="nav-item ">
-        <%= link_to 'Add Interface', new_user_interface_path(current_user.id), class: 'add-interface-form'  %>
       </li>
       <li class="nav-item">
-        <span cu='<%= current_user.id %>' class="menu-btns" id='user_status'></span>
+        <span cu='<%= current_user.id %>' class="menu-btns" id='user_status'><%= current_user.email%></span>
         <span data-container='body' data-toggle="tooltip", data-placement="bottom", title="Logout">
-          <%= link_to current_user.email, logout_path, class:"menu-btns", data: {confirm:'Log Out, For Serious?'}, remote: true %>
+          <%= link_to 'Logout', logout_path, class:"menu-btns", data: {confirm:'Log Out, For Serious?'}, remote: true %>
         </span>
       </li>
     </span>

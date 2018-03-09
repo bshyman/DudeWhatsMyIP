@@ -152,8 +152,15 @@ img#logo {
 	background-color: #5B5B5B;
 	padding: 20px 0px;
 	line-height: 1em;
-	margin-top: 5%;
+	margin-top: 0px;
+	top: 10px;
+	position: relative;
+	margin-bottom: 30px;
+	
 }
+
+
+
 
 form.new_interface {
 	width: 100%;
@@ -162,5 +169,12 @@ form.new_interface {
 
 .raise-table {
 	position:relative;
-	bottom: 260px
+	/*bottom: 200px;*/
+	/*margin-top: 20px;*/
+}
+
+.add-interface-form-btn {
+	background-color: #404549;
+	padding: 20px;
+
 }
