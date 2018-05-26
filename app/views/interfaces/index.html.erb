@@ -1,46 +1,53 @@
 <span class="ajax-form"></span>
-  <% if user_signed_in? %>
-<div id='plus-int-btn'>
-    <%= link_to new_user_interface_path(current_user.id) do  %>
-      <i  class="fas fa-4x fa-plus-square"></i>
-  <% end %>
-  
-</div>
-<% end %>
-<table class="table table-hover table-striped">
+
+<table class="table sortable">
   <thead>
     <tr>
       <th>IP Address</th>
       <th>Hostname</th>
       <th>Port</th>
       <th>DDNS</th>
-      <th>
-</th>
+      <th></th>
     </tr>
+    <tr class='test-ajax'></tr>
   </thead>
   <tbody class="list">
+
+
     <% @interfaces.each do |int| %>
       <tr class="trow data-row" id="<%= int.id %>">
-        <th scope="row"><a href="http://<%= int.ip %>"><%= int.ip %></a></th>
-        <td><a href="http://<%= int.ip %>"><%= int.hostname %></a></td>
-        <td><%= int.port %></td>
-        <td><a href="http://<%= int.ddns %>"><%= int.ddns %></a></td>
-        <!-- <td ><i id="remove_int_btn" class="fa fa-2x fa-trash " aria-hidden="true"></i></td> -->
-          <!-- Large modal -->
+        <th scope="row">
+          <a href="http://<%= int.ip %>">
+            <%= int.ip %>
+          </a>
+        </th>
         <td>
-<button type="button"  id='details-btn' data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-info-circle" aria-hidden="true"></i>
-</button></td>
+          <a href="http://<%= int.ip %>">
+            <%= int.hostname %>
+          </a>
+        </td>
+        <td>
+          <%= int.port %>
+        </td>
+        <td>
+          <a href="http://<%= int.ddns %>">
+            <%= int.ddns %>
+          </a>
+        </td>
+        <td>
+          <button type="button" class='details-btn' int_id="<%= int.id %>" data-toggle="modal" data-target="#edit-modal">
+            <i class="fa fa-info-circle edit-btn-<%= int.id %>" aria-hidden="true"></i>
+          </button>
+
+        </td>
       </tr>
-    <% end %>
+      <% end %>
   </tbody>
 
 
-<!-- Modal -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
-
+  
+  <script>
+  $('.details-btn').on('click', function(){
+    $('#edit-modal').modal();
+  })
+  </script>

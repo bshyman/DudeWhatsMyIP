@@ -1,0 +1,30 @@
+
+<div id='edit-modal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Update Address</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+<div class="container edit-interface-form">
+	<%= bootstrap_form_for(@interface, layout: :horizontal, label_col: "col-lg-3", control_col: "col-lg-9", url: user_interfaces_path,  method: 'put', id: params[:user_id]) do |f| %>
+		<%= f.text_field :ip, label: 'IP Address' %>
+		<%= f.text_field :hostname,  label: 'Hostname' %>
+		<%= f.text_field :port, label: 'Port #' %>
+		<%= f.text_field :ddns, label: 'DDNS Address' %>
+		<%= f.submit 'Update'%>
+		<%= link_to 'Cancel', user_interfaces_path(current_user.id), class: 'close-form btn' %> 
+	<% end %>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

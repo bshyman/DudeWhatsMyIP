@@ -57,6 +57,7 @@ group :development, :test do
   gem "responders"
   gem "better_errors"
   gem "binding_of_caller" 
+  # gem 'ruby-debug-ide'
 end
 
 group :test do
